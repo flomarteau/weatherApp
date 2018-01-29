@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-12 col-sm-8">
+
+          <form action="/addville" class="form-inline" method="post">
+            <div class="form-group mb-2" id="titleville">
+              Ville
+            </div>
+
+            <div class="form-group mx-sm-3 mb-2">
+              <input type="text" class="form-control" name="ville" placeholder="Paris, Lyon,...">
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-2 btn-warning">Enregistrer</button>
+          </form>
+        </div>
+
+      </div>
+
+      <%
+      for(var i=0; i<tableville.length; i++) {
+      %>
+
+        <form action="deleteville" method="get">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+              <%= tableville[i] %>
+              <a href="/deleteville?position=<%=i%>">
+                <span class="badge badge-default">
+                  <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+        </form>
+
+      <%
+      }
+      %>
+
+
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
+
+
+  </body>
+</html>
