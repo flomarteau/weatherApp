@@ -11,20 +11,18 @@
 
       <div class="row">
 
-        <div class="col-12 col-sm-8">
 
-          <form action="/addville" class="form-inline" method="post">
+          <form action="/addville" class="form-inline ajoutville" method="post">
             <div class="form-group mb-2" id="titleville">
               Ville
             </div>
 
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" name="ville" placeholder="Paris, Lyon,...">
+            <div class="form-group mx-sm-3 mb-2 ">
+              <input type="text" class="form-control" name="ville" placeholder="Paris, Lyon,..." value="">
             </div>
 
             <button type="submit" class="btn btn-primary mb-2 btn-warning">Enregistrer</button>
           </form>
-        </div>
 
       </div>
 
@@ -32,17 +30,15 @@
       for(var i=0; i<tableville.length; i++) {
       %>
 
-        <form action="deleteville" method="get">
-          <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between">
-              <%= tableville[i] %>
-              <a href="/deleteville?position=<%=i%>">
-                <span class="badge badge-default">
-                  <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
-                </span>
-              </a>
-            </li>
-        </form>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between">
+            <%= tableville[i] %>
+            <a href="/deleteville?position=<%=i%>">
+              <span class="badge badge-default">
+                <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
 
       <%
       }

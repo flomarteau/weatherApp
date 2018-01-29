@@ -15,9 +15,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/addville', function(req, res, next) {
-  console.log(req.body.ville);
-  tableville.push(req.body.ville);
-  res.render('index', { tableville });
+    if (req.body.ville !== "") {
+      tableville.push(req.body.ville);
+      res.render('index', { tableville });
+    } else {
+      res.render('index', { tableville });
+    };
 });
 
 router.get('/deleteville', function(req, res, next) {
