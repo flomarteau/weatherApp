@@ -9,12 +9,12 @@
 
 <body>
 
-  <div class="container">
+  <div class="container col-xs-12 col-md-12 col-lg-8">
 
     <div class="row">
 
 
-      <form action="/addville" class="form-inline ajoutville" method="post">
+      <form action="/addville" class="form-inline ajoutville col-md-12" method="post">
         <div class="form-group mb-2" id="titleville">
           Ville
         </div>
@@ -35,11 +35,11 @@
       %>
 
 
-        <li class="list-group-item d-flex justify-content-between">
+        <li class="list-group-item d-flex justify-content-between col-md-12">
 
           <span><%= city[i].name %></span>
 
-          <span>
+          <span class="col-md-4">
             <img src="http://openweathermap.org/img/w/<%= city[i].picto %>.png">
             <p class="badge badge-secondary"><%= city[i].temps %></p>
             <p class="badge badge-secondary"><%= city[i].tempmin %></p>
